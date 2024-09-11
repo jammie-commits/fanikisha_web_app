@@ -3,7 +3,7 @@ import UserProfile2 from "../../components/UserProfile2";
 import FeaturedProperties from "./FeaturedProperties";
 import FeaturesOverview from "./FeaturesOverview";
 import CallToAction from "./CallToAction";
-import StatisticsSection from "./StatisticsSection";
+
 import TestimonialsSlider from "./TestimonialsSlider";
 import Footer from "../../components/Footer";
 import HeroSection from "./HeroSection";
@@ -41,8 +41,7 @@ export default function LandingPage() {
                 {/* features overview section */}
                 <FeaturesOverview />
 
-                {/* statistics section */}
-                <StatisticsSection />
+               
 
                 {/* featured properties section */}
                 <FeaturedProperties />
