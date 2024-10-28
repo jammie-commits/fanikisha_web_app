@@ -3,27 +3,32 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin-top: 30px;                                                           
+  margin-top: 30px;
   height: 90vh;
   width: 100%;
 }
+
 .hero .container {
   padding-top: 15%;
 }
+
 .hero h1 {
   color: #fff;
   font-size: 60px;
 }
+
 .hero p {
   color: #fff;
   opacity: 0.8;
 }
+
 form {
   background-color: #fff;
   border-radius: 5px;
   margin-top: 50px;
   padding: 0 20px;
 }
+
 form input {
   padding: 10px;
   width: 100%;
@@ -31,27 +36,65 @@ form input {
   margin-top: 5px;
   border-radius: 5px;
 }
+
 form span {
   font-size: 14px;
   color: grey;
 }
+
 input::placeholder {
   font-size: 17px;
   color: black;
 }
+
 form .box {
   padding: 15px;
   border-left: 1px solid rgba(128, 128, 128, 0.2);
 }
+
 form .box:nth-child(1) {
   border-left: none;
 }
+
 form h4 {
   font-weight: 500;
 }
-@media screen and (max-width: 800px) {
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .hero {
+    height: 70vh;
+  }
+  .hero h1 {
+    font-size: 50px;
+  }
+  .hero .container {
+    padding-top: 20%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .hero {
+    height: 60vh;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+  .hero .container {
+    padding-top: 25%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
   .hero .container {
     padding-top: 30%;
+    text-align: center;
   }
   form {
     display: flex;
@@ -59,8 +102,30 @@ form h4 {
   }
   form .box {
     border-left: none;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .hero {
+    height: 40vh;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .hero .container {
+    padding-top: 35%;
+    text-align: center;
+  }
+  form {
+    margin-top: 30px;
   }
   form input {
     width: 100%;
+    padding: 8px;
   }
 }
