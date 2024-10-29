@@ -10,7 +10,7 @@ const Footer = () => {
           <div className='send flex'>
             <div className='text'>
               <h1>Do You Have Questions ?</h1>
-              <p>We'll help you to grow your career and growth.</p>
+              <p>We'll help you make it happen.</p>
             </div>
             <button className='btn5'>Contact Us Today</button>
           </div>
