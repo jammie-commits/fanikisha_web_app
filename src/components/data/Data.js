@@ -109,8 +109,8 @@ export const list = [
 ]
 export const awards = [
   {
-    
-    
+
+
   },
 ]
 
@@ -290,7 +290,7 @@ export const price = [
 export const footer = [
   {
     title: "LAYOUTS",
-    text: [{ list: "Home Page" }, { list: "About Page" }, { list: "Service Page" }, { list: "Property Page" }, { list: "Contact Page" } ],
+    text: [{ list: "Home Page" }, { list: "About Page" }, { list: "Service Page" }, { list: "Property Page" }, { list: "Contact Page" }],
   },
   {
     title: "ALL SECTIONS",
@@ -298,6 +298,6 @@ export const footer = [
   },
   {
     title: "COMPANY",
-    text: [{ list: "About" }, { list: "Blog" },  { list: "Login" }],
+    text: [{ list: "About" }, { list: "Blog" }, { list: "Login" }],
   },
 ]
