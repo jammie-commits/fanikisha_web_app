@@ -1,15 +1,15 @@
 import React from "react"
-// import Heading from "../../common/Heading"
+import Heading from "../../common/Heading"
 import "./hero.css"
 
 const Hero = () => {
   return (
     <>
       <section className='hero'>
-        {/* <div className='container'>
-          <Heading title='Search Your Next Home ' subtitle='Find new & featured property located in your local city.' />
+        <div className='container'>
+          <Heading title='Welcome To FANIKISHA VENTURES ltd ' subtitle='Bringing you an Executive, Credible, Trustworthy, Secure and reliable Land Investment deals.' />
 
-          <form className='flex'>
+          {/* <form className='flex'>
             <div className='box'>
               <span>City/Street</span>
               <input type='text' placeholder='Location' />
@@ -28,8 +28,8 @@ const Hero = () => {
             <button className='btn1'>
               <i className='fa fa-search'></i>
             </button>
-          </form>
-        </div> */}
+          </form> */}
+        </div>
       </section>
     </>
   )
