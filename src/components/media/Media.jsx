@@ -8,7 +8,7 @@ const Media = () => {
   return (
     <>
       <section className='blog-out mb'>
-        <Back name='Media' title='Media grid - Our Media' cover={img} />
+        <Back name='Media' title='Invest in - NANYUKI' cover={img} />
         <div className='container recent'>
           <RecentCard />
         </div>
