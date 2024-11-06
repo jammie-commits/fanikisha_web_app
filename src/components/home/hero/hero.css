@@ -59,13 +59,13 @@ form h4 {
 /* Responsive adjustments */
 @media screen and (max-width: 1200px) {
   .hero {
-    height: 70vh;
+    height: 70vh; /* Reduce height on larger screens */
   }
   .hero h1 {
-    font-size: 50px;
+    font-size: 50px; /* Reduce font size */
   }
   .hero .container {
-    padding-top: 20%;
+    padding-top: 20%; /* Adjust padding */
   }
 }
 
@@ -90,9 +90,9 @@ form h4 {
   }
   .hero .container {
     padding-top: 30%;
-    text-align: center;
+    text-align: center; /* Center text */
   }
-  form {
+  form { /* If you have a form, make it responsive */
     display: flex;
     flex-wrap: wrap;
   }
@@ -105,7 +105,7 @@ form h4 {
 
 @media screen and (max-width: 576px) {
   .hero {
-    height: 40vh;
+    height: 40vh; /* Further reduce height on smaller screens */
   }
   .hero h1 {
     font-size: 28px;
@@ -115,17 +115,15 @@ form h4 {
   }
   .hero .container {
     padding-top: 35%;
-    text-align: center;
   }
-  form {
+  form { /* Adjust form margins */
     margin-top: 30px;
   }
   form input {
     width: 100%;
     padding: 8px;
-}
-}
-.slider-container {
+  }
+}.slider-container {
   position: relative;
   height: 100vh;
   width: 100%;

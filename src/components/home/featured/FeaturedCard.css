@@ -1,0 +1,9 @@
+.featured-card {
+  /* Existing styles */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+}
+
+.featured-card:hover {
+  transform: scale(1.05); /* Slight scale up on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
