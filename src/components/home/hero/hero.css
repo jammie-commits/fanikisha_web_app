@@ -188,8 +188,8 @@ form h4 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   /* Add the gradient and blend mode */
-  background-image: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  mix-blend-mode: luminosity; /* Or try other blend modes like screen, overlay */
+  background-image: linear-gradient(to right, #69746e, #0e4e19, #379e08);
+  mix-blend-mode: 0; /* Or try other blend modes like screen, overlay */
 }
 
 .hero-heading-wrapper h1 {

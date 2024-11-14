@@ -24,9 +24,7 @@ const Header = () => {
           </div>
           <div className='button flex'>
            
-            <button className='btn1'>
-              <i className='fa fa-sign-out'></i> Sign In
-            </button>
+            
           </div>
 
           <div className='toggle'>

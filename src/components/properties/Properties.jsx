@@ -1,8 +1,8 @@
 import React from "react"
 import img from "../images/about.jpg"
 import Back from "../common/Back"
-import "../home/featured/Featured.css"
-import FeaturedCard from "../home/featured/FeaturedCard"
+import "../home/recent/recent.css"
+import RecentCard from "../home/recent/RecentCard"
 
 const Properties = () => {
   return (
@@ -10,7 +10,7 @@ const Properties = () => {
       <section className='services mb'>
         <Back name='Properties' title='Properties -All Properties' cover={img} />
         <div className='featured container'>
-          <FeaturedCard />
+          <RecentCard /> 
         </div>
       </section>
     </>

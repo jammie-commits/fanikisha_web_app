@@ -1,14 +1,30 @@
+/* Style for the featured box */
 .featured .box {
-  box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
-  border-radius: 6px;
+  box-shadow: 0 0 20px 0 rgba(112, 121, 138, 0.18); /* Improved shadow opacity for subtle effect */
+  border-radius: 8px; /* Slightly round corners for a smoother look */
   text-align: center;
-  padding: 30px;
+  padding: 35px; /* Increased padding for better spacing */
   cursor: pointer;
+  background-color: #ffffff; /* White background for contrast */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition effects for hover */
 }
+
+.featured .box:hover {
+  transform: translateY(-10px); /* Lift effect when hovered */
+  box-shadow: 0 0 25px 0 rgba(112, 121, 138, 0.25); /* Increase shadow intensity on hover */
+}
+
 .featured img {
   width: 250px;
   height: 200px;
-  margin: auto;
+  object-fit: cover; /* Ensures the image is cropped correctly */
+  margin: 15px auto; /* Added spacing around the image */
+  border-radius: 6px; /* Rounded corners for the image */
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.featured img:hover {
+  transform: scale(1.05); /* Slight zoom effect when the image is hovered */
 }
 
 .center-content {
@@ -16,4 +32,35 @@
   flex-direction: column; /* Align items vertically */
   align-items: center; /* Center horizontally */
   text-align: center;  /* Center text within elements */
+  gap: 20px; /* Add space between items */
+  margin-top: 50px; /* Space above the center content */
+}
+
+.center-content h2 {
+  font-size: 28px;
+  font-weight: 600; /* Make headings stand out */
+  color: #333333; /* Darker color for better readability */
+  margin-bottom: 20px;
+}
+
+.center-content p {
+  font-size: 16px;
+  color: #555555; /* Lighter text color for body content */
+  max-width: 800px; /* Limit text width for better readability */
+  line-height: 1.6; /* Improved line spacing for better text flow */
+}
+
+@media (max-width: 768px) {
+  .featured .box {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .featured img {
+    width: 200px; /* Reduce image size on smaller screens */
+    height: 160px;
+  }
+
+  .center-content {
+    margin-top: 30px; /* Adjust top margin on smaller screens */
+  }
 }

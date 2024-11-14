@@ -40,16 +40,16 @@ export const featured = [
     name: "NANYUKI-PHASE THREE",
     total: "Cash Price - KES 200,000 || Installments - KES 275,000",
   },
-  // {
-  //   cover: "../images/hero/h4.png",
-  //   name: "NANYUKI-PHASE FOUR",
-  //   total: "Cash Price - KES 200,000 || Installments - KES 275,000",
-  // },
-  // // {
-  //   cover: "../images/hero/h6.png",
-  //   name: "Villa & Condo",
-  //   total: "80 Property",
-  // },
+  {
+    cover: "../images/hero/h4.png",
+    name: "NANYUKI-PHASE FOUR",
+    total: "Cash Price - KES 200,000 || Installments - KES 275,000",
+  },
+   {
+    cover: "../images/hero/h1.png",
+    name: "NANYUKI-PHASE FIVE",
+    total: "Cash Price - KES 200,000 || Installments - KES 275,000",
+   },
 ]
 export const list = [
   {
