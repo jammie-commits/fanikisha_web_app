@@ -1,204 +1,274 @@
+/* Modern Hero Section */
 .hero {
-  margin-top: 30px;
-  height: 90vh;
-  width: center;
-}
-
-.hero .container {
-  padding-top: 15%;
-}
-
-.hero h1 {
-  color: #fff;
-  font-size: 60px;
-}
-
-.hero p {
-  color: #fff;
-  opacity: 0.8;
-}
-
-form {
-  background-color: #fff;
-  border-radius: 5px;
-  margin-top: 50px;
-  padding: 0 20px;
-}
-
-form input {
-  padding: 10px;
-  width: 100%;
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  margin-top: 5px;
-  border-radius: 5px;
-}
-
-form span {
-  font-size: 14px;
-  color: grey;
-}
-
-input::placeholder {
-  font-size: 17px;
-  color: black;
-}
-
-form .box {
-  padding: 15px;
-  border-left: 1px solid rgba(128, 128, 128, 0.2);
-}
-
-form .box:nth-child(1) {
-  border-left: none;
-}
-
-form h4 {
-  font-weight: 500;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 1200px) {
-  .hero {
-    height: 70vh; /* Reduce height on larger screens */
-  }
-  .hero h1 {
-    font-size: 50px; /* Reduce font size */
-  }
-  .hero .container {
-    padding-top: 20%; /* Adjust padding */
-  }
-}
-
-@media screen and (max-width: 992px) {
-  .hero {
-    height: 60vh;
-  }
-  .hero h1 {
-    font-size: 40px;
-  }
-  .hero .container {
-    padding-top: 25%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .hero {
-    height: 50vh;
-  }
-  .hero h1 {
-    font-size: 32px;
-  }
-  .hero .container {
-    padding-top: 30%;
-    text-align: center; /* Center text */
-  }
-  form { /* If you have a form, make it responsive */
-    display: flex;
-    flex-wrap: wrap;
-  }
-  form .box {
-    border-left: none;
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .hero {
-    height: 40vh; /* Further reduce height on smaller screens */
-  }
-  .hero h1 {
-    font-size: 28px;
-  }
-  .hero p {
-    font-size: 16px;
-  }
-  .hero .container {
-    padding-top: 35%;
-  }
-  form { /* Adjust form margins */
-    margin-top: 30px;
-  }
-  form input {
-    width: 100%;
-    padding: 8px;
-  }
-}.slider-container {
   position: relative;
   height: 100vh;
-  width: 100%;
-  overflow: hidden; /* Ensures sliding effect within container */
-  border: 8px solid #fff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  margin: 20px;
-  border-radius: 15px;
+  min-height: 600px;
+  overflow: hidden;
+  background: var(--gradient-primary);
 }
 
+/* Slider Container */
+.slider-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Slide Styles */
 .slide {
   position: absolute;
   top: 0;
-  left: 0; /* Initial position */
+  left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Add transform to transition */
+  transition: all var(--transition-slow) cubic-bezier(0.4, 0, 0.2, 1);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 1;
 }
 
 .slide.active {
   opacity: 1;
-  transform: translateX(0); /* Slide in from the left */
-  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
 }
 
 .slide:not(.active) {
-  transform: translateX(100%); /* Position off-screen to the right */
+  transform: scale(1.1);
 }
+
+/* Hero Content */
+.hero .container {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.hero-heading-wrapper {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-3xl);
+  margin-top: 10vh;
+  box-shadow: var(--shadow-2xl);
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-heading-wrapper h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: var(--space-lg);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-heading-wrapper p {
+  font-size: var(--font-size-xl);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: var(--space-xl);
+  font-weight: 400;
+}
+
+/* Slider Dots */
 .slider-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: var(--space-2xl);
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: var(--space-md);
+  z-index: 3;
 }
 
 .dot {
   width: 12px;
   height: 12px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.4);
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.2);
 }
 
 .dot.active {
-  background: white;
+  background: var(--white);
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-.hero-heading-wrapper {
-  background: rgba(255, 255, 255, 0.9); /* Keep the white background */
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 20vh;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-  /* Add the gradient and blend mode */
-  background-image: linear-gradient(to right, #69746e, #0e4e19, #379e08);
-  mix-blend-mode: 0; /* Or try other blend modes like screen, overlay */
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.hero-heading-wrapper h1 {
-  font-weight: 900;
-  /* Remove the gradient-related styles from h1 */
-  padding: 10px;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-.hero-heading-wrapper p {
-  font-weight: 500;
-  /* Remove the gradient-related styles from p */
-  padding: 10px;
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .hero {
+    height: 90vh;
+  }
+  
+  .hero-heading-wrapper h1 {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .hero-heading-wrapper p {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    height: 80vh;
+  }
+  
+  .hero-heading-wrapper {
+    padding: var(--space-2xl);
+    margin-top: 8vh;
+  }
+  
+  .hero-heading-wrapper h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-heading-wrapper p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    min-height: 500px;
+  }
+  
+  .hero .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .hero-heading-wrapper {
+    padding: var(--space-xl);
+    margin-top: 5vh;
+    border-radius: var(--radius-xl);
+  }
+  
+  .hero-heading-wrapper h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-md);
+  }
+  
+  .hero-heading-wrapper p {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .slider-dots {
+    bottom: var(--space-xl);
+    gap: var(--space-sm);
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .hero-heading-wrapper {
+    padding: var(--space-lg);
+    margin-top: 3vh;
+  }
+  
+  .hero-heading-wrapper h1 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .hero-heading-wrapper p {
+    font-size: var(--font-size-xs);
+  }
+  
+  .slider-dots {
+    bottom: var(--space-lg);
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .slide {
+    background-size: cover;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    transition: opacity var(--transition-normal);
+  }
+  
+  .slide.active {
+    transform: none;
+  }
+  
+  .slide:not(.active) {
+    transform: none;
+  }
 }

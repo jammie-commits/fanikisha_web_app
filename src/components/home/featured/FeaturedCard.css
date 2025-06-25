@@ -1,79 +1,99 @@
 .featured-card {
-  background-color: #fff; /* White background for clean look */
-  border-radius: 10px; /* Rounded corners for a modern feel */
-  overflow: hidden; /* Ensures rounded corners on the inside content */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle default shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Add smooth transitions */
-  margin: 20px; /* Space between cards */
-  padding: 15px; /* Inner padding for spacing */
-  text-align: center; /* Center-align text */
-  position: relative; /* Needed for absolute positioning of overlay or icons */
-  display: flex;
-  flex-direction: column; /* Layout for content inside the card */
-  justify-content: flex-start; /* Align content to top */
-  height: 100%; /* Ensure cards are of consistent height */
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  transition: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  display: block;
+  flex-direction: unset;
+  justify-content: unset;
+  height: auto;
 }
 
 .featured-card:hover {
-  transform: scale(1.05); /* Slight scale up on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Increase shadow on hover for emphasis */
-  background-color: #f9f9f9; /* Subtle background color change on hover */
+  transform: none;
+  box-shadow: none;
+  background-color: transparent;
 }
 
 .featured-card img {
-  width: 100%; /* Ensure the image takes full width of the card */
-  height: auto; /* Keep aspect ratio intact */
-  border-radius: 8px; /* Smooth rounded edges for the image */
-  object-fit: cover; /* Ensure the image is well-cropped */
-  transition: transform 0.3s ease; /* Smooth zoom-in effect */
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .featured-card img:hover {
-  transform: scale(1.1); /* Zoom effect for the image on hover */
+  transform: scale(1.1);
 }
 
 .featured-card h3 {
-  font-size: 20px; /* Medium font size for title */
-  font-weight: 600; /* Bold title */
-  color: #333; /* Dark text for good contrast */
-  margin: 15px 0 10px 0; /* Space above and below the title */
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 15px 0 10px 0;
 }
 
 .featured-card p {
-  font-size: 16px; /* Readable font size for description */
-  color: #555; /* Lighter color for text */
-  margin-bottom: 20px; /* Space below the description */
-  line-height: 1.5; /* Improve line height for readability */
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .featured-card .price {
-  font-size: 18px; /* Price slightly larger than description */
-  font-weight: 600; /* Bold price for visibility */
-  color: #e74c3c; /* Red color for emphasis */
+  font-size: 18px;
+  font-weight: 600;
+  color: #e74c3c;
 }
 
 .featured-card .price span {
   font-size: 14px;
   font-weight: normal;
-  color: #7f8c8d; /* Lighter text for installment or additional info */
+  color: #7f8c8d;
+}
+
+/* Modern Grid Layout */
+.featured-card .content.grid5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .featured-card .content.grid5 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+}
+
 @media (max-width: 768px) {
   .featured-card {
-    padding: 10px; /* Reduce padding on smaller screens */
-    margin: 15px 0; /* Less margin between cards */
+    padding: 0;
+    margin: 0;
   }
 
   .featured-card h3 {
-    font-size: 18px; /* Adjust title size */
+    font-size: 18px;
   }
 
   .featured-card p {
-    font-size: 14px; /* Adjust description font size */
+    font-size: 14px;
   }
 
   .featured-card .price {
-    font-size: 16px; /* Adjust price font size */
+    font-size: 16px;
+  }
+  
+  .featured-card .content.grid5 {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

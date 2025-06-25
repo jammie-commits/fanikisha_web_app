@@ -1,0 +1,123 @@
+/* Properties Page Styles with Light Green and Navy Blue Theme */
+.properties-page {
+  background: var(--white);
+}
+
+.properties-page .featured {
+  padding: var(--space-3xl) 0;
+  background: var(--gray-50);
+}
+
+/* Properties Intro Section */
+.properties-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-3xl);
+  padding: var(--space-2xl);
+  background: var(--white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+  position: relative;
+  overflow: hidden;
+}
+
+.properties-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #22c55e, #006994);
+}
+
+.properties-intro h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, #22c55e, #006994);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.properties-intro p {
+  font-size: var(--font-size-lg);
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Enhanced Featured Section for Properties */
+.properties-page .featured {
+  position: relative;
+}
+
+.properties-page .featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="properties-grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(0,105,148,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23properties-grid)"/></svg>');
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.properties-page .featured .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Property Cards Enhancement */
+.properties-page .featured .box {
+  border: 1px solid var(--gray-200);
+  transition: all var(--transition-normal);
+}
+
+.properties-page .featured .box:hover {
+  border-color: #22c55e;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.1);
+}
+
+.properties-page .featured .box::before {
+  background: linear-gradient(135deg, #22c55e, #006994);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .properties-page .featured {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .properties-intro {
+    padding: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+  
+  .properties-intro h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .properties-intro p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 576px) {
+  .properties-intro {
+    padding: var(--space-lg);
+    margin: var(--space-md) var(--space-md) var(--space-xl);
+  }
+  
+  .properties-intro h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .properties-intro p {
+    font-size: var(--font-size-sm);
+  }
+} 

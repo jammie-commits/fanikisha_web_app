@@ -1,66 +1,229 @@
-/* Style for the featured box */
+/* Modern Featured Section Styles */
+.featured {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 0;
+  position: relative;
+}
+
+.featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Modern Featured Box Styles */
 .featured .box {
-  box-shadow: 0 0 20px 0 rgba(112, 121, 138, 0.18); /* Improved shadow opacity for subtle effect */
-  border-radius: 8px; /* Slightly round corners for a smoother look */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
   text-align: center;
-  padding: 35px; /* Increased padding for better spacing */
+  padding: 40px 30px;
   cursor: pointer;
-  background-color: #ffffff; /* White background for contrast */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition effects for hover */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.featured .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.featured .box:hover::before {
+  left: 100%;
 }
 
 .featured .box:hover {
-  transform: translateY(-10px); /* Lift effect when hovered */
-  box-shadow: 0 0 25px 0 rgba(112, 121, 138, 0.25); /* Increase shadow intensity on hover */
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.98);
 }
 
+/* Modern Image Styles */
 .featured img {
-  width: 250px;
-  height: 200px;
-  object-fit: cover; /* Ensures the image is cropped correctly */
-  margin: 15px auto; /* Added spacing around the image */
-  border-radius: 6px; /* Rounded corners for the image */
-  transition: transform 0.3s ease; /* Smooth zoom effect */
+  width: 280px;
+  height: 220px;
+  object-fit: cover;
+  margin: 0 auto 25px;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .featured img:hover {
-  transform: scale(1.05); /* Slight zoom effect when the image is hovered */
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
+/* Modern Typography */
+.featured h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 20px 0 15px;
+  letter-spacing: -0.5px;
+}
+
+.featured h4::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.featured .box:hover h4::after {
+  width: 60px;
+}
+
+.featured label {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.featured .box:hover label {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Modern Center Content */
 .center-content {
   display: flex;
-  flex-direction: column; /* Align items vertically */
-  align-items: center; /* Center horizontally */
-  text-align: center;  /* Center text within elements */
-  gap: 20px; /* Add space between items */
-  margin-top: 50px; /* Space above the center content */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  margin-top: 60px;
 }
 
 .center-content h2 {
-  font-size: 28px;
-  font-weight: 600; /* Make headings stand out */
-  color: #333333; /* Darker color for better readability */
-  margin-bottom: 20px;
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .center-content p {
-  font-size: 16px;
-  color: #555555; /* Lighter text color for body content */
-  max-width: 800px; /* Limit text width for better readability */
-  line-height: 1.6; /* Improved line spacing for better text flow */
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+/* Grid Layout Improvements */
+.featured .content.grid5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .featured .content.grid5 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .center-content h2 {
+    font-size: 36px;
+  }
 }
 
 @media (max-width: 768px) {
+  .featured {
+    padding: 60px 0;
+  }
+  
   .featured .box {
-    padding: 20px; /* Adjust padding for smaller screens */
+    padding: 30px 20px;
   }
-
+  
   .featured img {
-    width: 200px; /* Reduce image size on smaller screens */
-    height: 160px;
+    width: 240px;
+    height: 180px;
   }
-
-  .center-content {
-    margin-top: 30px; /* Adjust top margin on smaller screens */
+  
+  .center-content h2 {
+    font-size: 28px;
+  }
+  
+  .center-content p {
+    font-size: 16px;
+  }
+  
+  .featured .content.grid5 {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .featured .box {
+    padding: 25px 15px;
+  }
+  
+  .featured img {
+    width: 200px;
+    height: 150px;
+  }
+  
+  .center-content h2 {
+    font-size: 24px;
+  }
+  
+  .featured h4 {
+    font-size: 20px;
+  }
+}
+
+/* Animation for cards on load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.featured .box {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.featured .box:nth-child(1) { animation-delay: 0.1s; }
+.featured .box:nth-child(2) { animation-delay: 0.2s; }
+.featured .box:nth-child(3) { animation-delay: 0.3s; }
+.featured .box:nth-child(4) { animation-delay: 0.4s; }
+.featured .box:nth-child(5) { animation-delay: 0.5s; }

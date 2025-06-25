@@ -1,0 +1,308 @@
+/* Modern Back Component with Light Green and Navy Blue Theme */
+.back {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Image */
+.back-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.back-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+}
+
+.back:hover .back-image img {
+  transform: scale(1.05);
+}
+
+/* Overlay with Theme Colors */
+.back-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 139, 34, 0.8) 0%,    /* Light Green */
+    rgba(0, 105, 148, 0.9) 50%,   /* Navy Blue */
+    rgba(0, 71, 171, 0.95) 100%   /* Darker Navy */
+  );
+  z-index: 2;
+}
+
+/* Content Container */
+.back-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-content .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text Content */
+.back-text {
+  text-align: center;
+  color: var(--white);
+  max-width: 800px;
+  padding: var(--space-2xl);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-2xl);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Badge */
+.back-badge {
+  margin-bottom: var(--space-lg);
+}
+
+.back-badge span {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: var(--white);
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-md);
+  display: inline-block;
+}
+
+/* Main Title */
+.back-text h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: 900;
+  margin-bottom: var(--space-lg);
+  line-height: 1.1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff, #e0f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.back-text p {
+  font-size: var(--font-size-xl);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Action Buttons */
+.back-actions {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.back-actions button {
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-width: 180px;
+  justify-content: center;
+}
+
+.back-actions .btn-primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: var(--white);
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+.back-actions .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.back-actions .btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.back-actions .btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Scroll Indicator */
+.back-scroll-indicator {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  animation: bounce 2s infinite;
+}
+
+.scroll-arrow {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.scroll-arrow:hover {
+  border-color: var(--white);
+  transform: rotate(45deg) scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .back {
+    height: 60vh;
+  }
+  
+  .back-text h1 {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .back-text p {
+    font-size: var(--font-size-lg);
+  }
+  
+  .back-actions {
+    gap: var(--space-md);
+  }
+  
+  .back-actions button {
+    min-width: 160px;
+    padding: var(--space-sm) var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .back {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .back-text {
+    padding: var(--space-xl);
+    margin: var(--space-md);
+  }
+  
+  .back-text h1 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-md);
+  }
+  
+  .back-text p {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .back-actions {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .back-actions button {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .back-badge span {
+    font-size: var(--font-size-xs);
+    padding: var(--space-xs) var(--space-lg);
+  }
+}
+
+@media (max-width: 576px) {
+  .back {
+    height: 45vh;
+    min-height: 350px;
+  }
+  
+  .back-text {
+    padding: var(--space-lg);
+  }
+  
+  .back-text h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .back-text p {
+    font-size: var(--font-size-sm);
+  }
+  
+  .back-actions button {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-size-sm);
+  }
+  
+  .scroll-arrow {
+    width: 25px;
+    height: 25px;
+  }
+} 
