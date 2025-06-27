@@ -4,17 +4,54 @@ import Back from "../common/Back"
 import "../home/recent/recent.css"
 import "./Properties.css"
 import RecentCard from "../home/recent/RecentCard"
+import { list as allProperties } from "../data/Data"
+
+const PAGE_SIZE = 6
 
 const Properties = () => {
   const [activeFilter, setActiveFilter] = useState('all')
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
 
   const filterButtons = [
     { id: 'all', label: 'All Properties' },
-    { id: 'residential', label: 'Residential' },
-    { id: 'commercial', label: 'Commercial' },
-    { id: 'land', label: 'Land & Plots' },
-    { id: 'luxury', label: 'Luxury' }
+    { id: 'nanyuki', label: 'Nanyuki Properties' },
+    { id: 'matuu', label: 'Matuu Properties' },
+    { id: 'other', label: 'Other Locations' }
   ]
+
+  // Filtering logic based on location
+  const getFilteredProperties = () => {
+    switch (activeFilter) {
+      case 'nanyuki':
+        return allProperties.filter(property => 
+          property.location.toLowerCase().includes('nanyuki')
+        )
+      case 'matuu':
+        return allProperties.filter(property => 
+          property.location.toLowerCase().includes('matuu')
+        )
+      case 'other':
+        return allProperties.filter(property => 
+          !property.location.toLowerCase().includes('nanyuki') && 
+          !property.location.toLowerCase().includes('matuu')
+        )
+      default:
+        return allProperties
+    }
+  }
+
+  const filteredProperties = getFilteredProperties()
+  const visibleProperties = filteredProperties.slice(0, visibleCount)
+  const hasMore = visibleCount < filteredProperties.length
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => Math.min(prev + PAGE_SIZE, filteredProperties.length))
+  }
+
+  const handleFilterChange = (filterId) => {
+    setActiveFilter(filterId)
+    setVisibleCount(PAGE_SIZE) // Reset to first page when filter changes
+  }
 
   return (
     <>
@@ -38,14 +75,14 @@ const Properties = () => {
                 <button
                   key={filter.id}
                   className={`filter-btn ${activeFilter === filter.id ? 'active' : ''}`}
-                  onClick={() => setActiveFilter(filter.id)}
+                  onClick={() => handleFilterChange(filter.id)}
                 >
                   {filter.label}
                 </button>
               ))}
             </div>
             <div className='filter-stats'>
-              <span className='property-count'>Showing 24 properties</span>
+              <span className='property-count'>Showing {visibleProperties.length} of {filteredProperties.length} properties</span>
               <div className='sort-options'>
                 <select className='sort-select'>
                   <option>Sort by: Latest</option>
@@ -59,18 +96,20 @@ const Properties = () => {
 
           {/* Properties Grid */}
           <div className='properties-grid'>
-            <RecentCard />
+            <RecentCard properties={visibleProperties} />
           </div>
 
           {/* Load More Button */}
-          <div className='load-more-section'>
-            <button className='load-more-btn'>
-              <span>Load More Properties</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
+          {hasMore && (
+            <div className='load-more-section'>
+              <button className='load-more-btn' onClick={handleLoadMore}>
+                <span>Load More Properties</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </>

@@ -6,33 +6,10 @@ export const nav = [
   {
     text: "Properties",
     path: "/properties",
-    dropdown: [
-      { text: "Our Properties", path: "/properties" },
-    ],
-  },
-  {
-    text: "Diaspora Center",
-    path: "/diaspora",
   },
   {
     text: "About Us",
     path: "/about",
-    dropdown: [
-      { text: "Who we Are", path: "/about" },
-      { text: "Our Team", path: "/about/team" },
-      { text: "Awards", path: "/about/awards" },
-      { text: "Corporate Social Responsibility", path: "/about/csr" },
-    ],
-  },
-  {
-    text: "Media",
-    path: "/media",
-    dropdown: [
-      { text: "2024 Newsletter", path: "/media/newsletter-2024" },
-      { text: "2025 New Year's Addresses", path: "/media/newyear-2025" },
-      { text: "Blogs", path: "/media/blogs" },
-      { text: "Gallery", path: "/media/gallery" },
-    ],
   },
   {
     text: "Contact Us",
@@ -41,91 +18,104 @@ export const nav = [
 ]
 export const featured = [
   {
-    cover: "../images/hero/h1.png",
-    name: "NANYUKI-PHASE ONE",
-    total: "Cash Price - KES 200,000 || Installments - KES 275,000",
+    cover: "../images/list/p-1.png",
+    name: "ALPHA GARDENS",
+    total: "Cash Price - KES 350,000 || Installments - KES 400,000",
+    location: "Matuu",
+    description: "Prime serviced plots in Matuu, ready title deeds, water and electricity on site. Secure your investment today!",
+    status: "Available"
   },
   {
-    cover: "../images/hero/h2.png",
-    name: "NANYUKI-PHASE TWO",
+    cover: "../images/list/p-2.png",
+    name: "NANYUKI PHASE ONE",
     total: "Cash Price - KES 200,000 || Installments - KES 275,000",
+    location: "Nanyuki",
+    description: "Phase One of our Nanyuki development with ready title deeds.",
+    status: "Available"
   },
   {
-    cover: "../images/hero/h3.png",
-    name: "NANYUKI-PHASE THREE",
+    cover: "../images/list/p-3.png",
+    name: "NANYUKI PHASE TWO",
     total: "Cash Price - KES 200,000 || Installments - KES 275,000",
+    location: "Nanyuki",
+    description: "Phase Two development with improved infrastructure.",
+    status: "Available"
   },
   {
-    cover: "../images/hero/h4.png",
-    name: "NANYUKI-PHASE FOUR",
+    cover: "../images/list/p-4.png",
+    name: "NANYUKI PHASE THREE",
     total: "Cash Price - KES 200,000 || Installments - KES 275,000",
+    location: "Nanyuki",
+    description: "Latest phase with premium amenities and security.",
+    status: "Available"
   },
-   {
-    cover: "../images/hero/h1.png",
-    name: "NANYUKI-PHASE FIVE",
-    total: "Cash Price - KES 200,000 || Installments - KES 275,000",
-   },
 ]
 export const list = [
   {
     id: 1,
     cover: "../images/list/p-1.png",
-    name: "Nanyuki",
-    location: "Nanyuki",
+    name: "ALPHA GARDENS",
+    location: "Matuu",
     category: "For Sale",
-    price: "KES 200,000",
+    price: "KES 350,000",
     type: "50X100",
     status: "Available",
+    description: "Prime serviced plots in Matuu, ready title deeds, water and electricity on site. Secure your investment today!"
   },
   {
     id: 2,
     cover: "../images/list/p-2.png",
-    name: "Nanyuki",
+    name: "NANYUKI PHASE ONE",
     location: "Nanyuki",
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
     status: "Available",
+    description: "Phase One of our Nanyuki development with ready title deeds."
   },
   {
     id: 3,
-    cover: "../images/list/p-7.png",
-    name: "Nanyuki",
+    cover: "../images/list/p-3.png",
+    name: "NANYUKI PHASE TWO",
     location: "Nanyuki",
-    ccategory: "For Sale",
+    category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
     status: "Available",
+    description: "Phase Two development with improved infrastructure."
   },
   {
     id: 4,
     cover: "../images/list/p-4.png",
-    name: "Nanyuki",
+    name: "NANYUKI PHASE THREE",
     location: "Nanyuki",
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
     status: "Available",
+    description: "Latest phase with premium amenities and security."
   },
   {
     id: 5,
     cover: "../images/list/p-5.png",
-    name: "Nanyuki",
+    name: "NANYUKI PHASE FOUR",
     location: "Nanyuki",
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
     status: "Available",
+    description: "Phase Four development with enhanced features."
   },
   {
     id: 6,
     cover: "../images/list/p-6.png",
-    name: "Nanyuki",
+    name: "NANYUKI PHASE FIVE",
     location: "Nanyuki",
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
     status: "Available",
+    description: "Phase Five - the latest addition to our Nanyuki portfolio."
   },
 ]
 export const awards = [

@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link for routing
-import { list } from "../../data/Data";
+import { list as allProperties } from "../../data/Data";
 
-const RecentCard = () => {
+const RecentCard = ({ properties }) => {
+  const displayList = properties || allProperties;
   return (
     <div className="content grid3 mtop">
-      {list.map((property) => {
+      {displayList.map((property) => {
         const { id, cover, category, location, name, price, type } = property;
         return (
           <div className="box shadow" key={id}>
