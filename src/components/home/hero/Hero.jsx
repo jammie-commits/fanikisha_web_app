@@ -28,12 +28,19 @@ const Hero = () => {
                 backgroundImage: `url(${slide.cover})`,
               }}
             >
+              <div className='hero-overlay'></div>
               <div className='container'>
                 <div className="hero-heading-wrapper">
                   <Heading 
                     title='Welcome To FANIKISHA VENTURES ltd ' 
                     subtitle='Bringing you an Executive, Credible, Trustworthy, Secure and reliable Land Investment deals.' 
                   />
+                  <div className="hero-cta">
+                    <button className="btn-primary hero-btn">
+                      <i className="fa fa-calendar-check-o"></i>
+                      Book a Site Visit
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

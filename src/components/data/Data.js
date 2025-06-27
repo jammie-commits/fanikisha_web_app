@@ -1,26 +1,41 @@
 export const nav = [
   {
-    text: "home",
+    text: "Home",
     path: "/",
   },
   {
-    text: "about",
-    path: "/about",
-  },
-  {
-    text: "properties",
+    text: "Properties",
     path: "/properties",
+    dropdown: [
+      { text: "Our Properties", path: "/properties" },
+    ],
   },
   {
-    text: "media",
+    text: "Diaspora Center",
+    path: "/diaspora",
+  },
+  {
+    text: "About Us",
+    path: "/about",
+    dropdown: [
+      { text: "Who we Are", path: "/about" },
+      { text: "Our Team", path: "/about/team" },
+      { text: "Awards", path: "/about/awards" },
+      { text: "Corporate Social Responsibility", path: "/about/csr" },
+    ],
+  },
+  {
+    text: "Media",
     path: "/media",
+    dropdown: [
+      { text: "2024 Newsletter", path: "/media/newsletter-2024" },
+      { text: "2025 New Year's Addresses", path: "/media/newyear-2025" },
+      { text: "Blogs", path: "/media/blogs" },
+      { text: "Gallery", path: "/media/gallery" },
+    ],
   },
-  // {
-  //   text: "pricing",
-  //   path: "/pricing",
-  // },
   {
-    text: "contact",
+    text: "Contact Us",
     path: "/contact",
   },
 ]
@@ -60,6 +75,7 @@ export const list = [
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
+    status: "Available",
   },
   {
     id: 2,
@@ -69,6 +85,7 @@ export const list = [
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
+    status: "Available",
   },
   {
     id: 3,
@@ -78,6 +95,7 @@ export const list = [
     ccategory: "For Sale",
     price: "KES 200,000",
     type: "50X100",
+    status: "Available",
   },
   {
     id: 4,
@@ -87,6 +105,7 @@ export const list = [
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
+    status: "Available",
   },
   {
     id: 5,
@@ -96,6 +115,7 @@ export const list = [
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
+    status: "Available",
   },
   {
     id: 6,
@@ -105,6 +125,7 @@ export const list = [
     category: "For Sale",
     price: "KES 200,000",
     type: "50X100",
+    status: "Available",
   },
 ]
 export const awards = [

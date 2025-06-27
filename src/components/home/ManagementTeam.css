@@ -1,0 +1,125 @@
+/* Management Team Section */
+.management-team-section {
+  background: var(--white);
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+.team-title {
+  text-align: center;
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  color: #006994;
+  margin-bottom: var(--space-3xl);
+  background: linear-gradient(135deg, #22c55e, #006994);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-2xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: rgba(0, 105, 148, 0.07);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+  padding: var(--space-2xl);
+  text-align: center;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.team-card:hover {
+  background: linear-gradient(135deg, #22c55e 10%, #006994 90%);
+  color: var(--white);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.team-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: 0 auto var(--space-lg);
+  box-shadow: var(--shadow-md);
+  border: 3px solid #22c55e;
+  background: var(--white);
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+}
+
+.team-card h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: #006994;
+  transition: color var(--transition-fast);
+}
+
+.team-card:hover h3 {
+  color: var(--white);
+}
+
+.team-card h4 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: #22c55e;
+  margin-bottom: var(--space-md);
+  transition: color var(--transition-fast);
+}
+
+.team-card:hover h4 {
+  color: var(--white);
+}
+
+.team-card p {
+  color: var(--gray-700);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.team-card:hover p {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .team-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .team-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-xl);
+  }
+}
+
+@media (max-width: 576px) {
+  .team-card {
+    padding: var(--space-lg);
+    min-height: 220px;
+  }
+  .team-title {
+    font-size: var(--font-size-xl);
+  }
+} 

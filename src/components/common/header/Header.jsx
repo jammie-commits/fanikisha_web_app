@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom"
 const Header = () => {
   const [navList, setNavList] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [dropdownIndex, setDropdownIndex] = useState(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -20,6 +21,12 @@ const Header = () => {
 
   const closeMobileMenu = () => {
     setNavList(false)
+    setDropdownIndex(null)
+  }
+
+  // Handle dropdown open/close for mobile
+  const handleDropdownClick = (index) => {
+    setDropdownIndex(dropdownIndex === index ? null : index)
   }
 
   return (
@@ -32,15 +39,49 @@ const Header = () => {
           
           <div className={`nav ${navList ? 'active' : ''}`}>
             <ul>
-              {nav.map((list, index) => (
-                <li key={index}>
-                  <Link 
-                    to={list.path} 
-                    className={location.pathname === list.path ? 'active' : ''}
+              {nav.map((item, index) => (
+                <li
+                  key={index}
+                  className={item.dropdown ? 'has-dropdown' : ''}
+                  onMouseEnter={() => window.innerWidth > 768 && item.dropdown && setDropdownIndex(index)}
+                  onMouseLeave={() => window.innerWidth > 768 && item.dropdown && setDropdownIndex(null)}
+                >
+                  <Link
+                    to={item.path}
+                    className={location.pathname === item.path ? 'active' : ''}
                     onClick={closeMobileMenu}
                   >
-                    {list.text}
+                    {item.text}
+                    {item.dropdown && <span className='dropdown-arrow'>&#9662;</span>}
                   </Link>
+                  {item.dropdown && (
+                    <ul
+                      className={`dropdown-menu${dropdownIndex === index ? ' show' : ''}`}
+                      style={{ display: dropdownIndex === index ? 'block' : undefined }}
+                    >
+                      {item.dropdown.map((sub, subIdx) => (
+                        <li key={subIdx}>
+                          <Link
+                            to={sub.path}
+                            className={location.pathname === sub.path ? 'active' : ''}
+                            onClick={closeMobileMenu}
+                          >
+                            {sub.text}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {/* Mobile tap to open dropdown */}
+                  {item.dropdown && (
+                    <button
+                      className='dropdown-toggle-btn'
+                      onClick={() => handleDropdownClick(index)}
+                      tabIndex={-1}
+                    >
+                      <span className='dropdown-arrow'>&#9662;</span>
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

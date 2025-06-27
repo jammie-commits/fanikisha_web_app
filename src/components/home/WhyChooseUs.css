@@ -1,0 +1,116 @@
+/* Why Choose Us Section */
+.why-choose-us-section {
+  background: var(--gray-50);
+  padding: var(--space-3xl) 0;
+  position: relative;
+}
+
+.why-title {
+  text-align: center;
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  color: #006994;
+  margin-bottom: var(--space-3xl);
+  background: linear-gradient(135deg, #22c55e, #006994);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.why-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-2xl);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-100);
+  padding: var(--space-2xl);
+  text-align: center;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.why-card:hover {
+  background: linear-gradient(135deg, #22c55e 10%, #006994 90%);
+  color: var(--white);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.why-card:hover .why-icon {
+  background: var(--white);
+  color: #22c55e;
+  box-shadow: var(--shadow-xl);
+}
+
+.why-icon {
+  background: linear-gradient(135deg, #22c55e, #006994);
+  color: var(--white);
+  border-radius: var(--radius-full);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.why-card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  color: #006994;
+  transition: color var(--transition-fast);
+}
+
+.why-card:hover h3 {
+  color: var(--white);
+}
+
+.why-card p {
+  color: var(--gray-600);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.why-card:hover p {
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .why-cards-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  .why-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-xl);
+  }
+}
+
+@media (max-width: 576px) {
+  .why-card {
+    padding: var(--space-lg);
+    min-height: 180px;
+  }
+  .why-title {
+    font-size: var(--font-size-xl);
+  }
+} 
